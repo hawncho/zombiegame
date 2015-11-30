@@ -1,0 +1,147 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{0B720B63-6AD5-448F-BB2D-3DABBF34D933}</ProjectGuid>
+    <RootNamespace>ZombieGame</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup />
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>$(SolutionDir)include</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>$(SolutionDir)lib</AdditionalLibraryDirectories>
+      <AdditionalDependencies>sfml-audio-d.lib;glew32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>$(SolutionDir)include</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>SFML_STATIC;GLEW_STATIC;_MBCS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalLibraryDirectories>$(SolutionDir)lib</AdditionalLibraryDirectories>
+      <AdditionalDependencies>ogg.lib;vorbis.lib;vorbisfile.lib;vorbisenc.lib;flac.lib;openal32.lib;sfml-system-s.lib;sfml-audio-s.lib;freeglut.lib;glew32s.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <None Include="shader.frag" />
+    <None Include="shader.vert" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="App.cpp" />
+    <ClCompile Include="BulletProjectile.cpp" />
+    <ClCompile Include="Camera2D.cpp" />
+    <ClCompile Include="CollisionAABB.cpp" />
+    <ClCompile Include="CollisionCircle.cpp" />
+    <ClCompile Include="CollisionSystem.cpp" />
+    <ClCompile Include="Crosshair.cpp" />
+    <ClCompile Include="EnemyCharacter.cpp" />
+    <ClCompile Include="Explosion.cpp" />
+    <ClCompile Include="Game.cpp" />
+    <ClCompile Include="GameLevel.cpp" />
+    <ClCompile Include="GameObject.cpp" />
+    <ClCompile Include="GLUTBackend.cpp" />
+    <ClCompile Include="GrenadePickup.cpp" />
+    <ClCompile Include="GrenadeProjectile.cpp" />
+    <ClCompile Include="HUDGrenadeCount.cpp" />
+    <ClCompile Include="MovableObject.cpp" />
+    <ClCompile Include="PlayerCharacter.cpp" />
+    <ClCompile Include="Projectile.cpp" />
+    <ClCompile Include="ShaderBackend.cpp" />
+    <ClCompile Include="Sprite.cpp" />
+    <ClCompile Include="TextRenderer.cpp" />
+    <ClCompile Include="Texture.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="ActionData.h" />
+    <ClInclude Include="BulletProjectile.h" />
+    <ClInclude Include="Camera2D.h" />
+    <ClInclude Include="Collider.h" />
+    <ClInclude Include="CollisionAABB.h" />
+    <ClInclude Include="CollisionCircle.h" />
+    <ClInclude Include="CollisionSystem.h" />
+    <ClInclude Include="Crosshair.h" />
+    <ClInclude Include="Damageable.h" />
+    <ClInclude Include="EnemyCharacter.h" />
+    <ClInclude Include="Expirable.h" />
+    <ClInclude Include="Explosion.h" />
+    <ClInclude Include="Game.h" />
+    <ClInclude Include="GameLevel.h" />
+    <ClInclude Include="GameObject.h" />
+    <ClInclude Include="Global.h" />
+    <ClInclude Include="GLUTBackend.h" />
+    <ClInclude Include="GLUTCallbacks.h" />
+    <ClInclude Include="GrenadePickup.h" />
+    <ClInclude Include="GrenadeProjectile.h" />
+    <ClInclude Include="HUDElement.h" />
+    <ClInclude Include="HUDGrenadeCount.h" />
+    <ClInclude Include="MovableObject.h" />
+    <ClInclude Include="ObjectPool.h" />
+    <ClInclude Include="Pickup.h" />
+    <ClInclude Include="PlayerCharacter.h" />
+    <ClInclude Include="Projectile.h" />
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="resource1.h" />
+    <ClInclude Include="ShaderBackend.h" />
+    <ClInclude Include="Sprite.h" />
+    <ClInclude Include="TextRenderer.h" />
+    <ClInclude Include="Texture.h" />
+    <ClInclude Include="Vertex.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="ZombieGame.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="icon1.ico" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
